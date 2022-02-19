@@ -30,20 +30,19 @@ public class LoginPageTest extends Testbase{
 	public void verifyloginpagetest()
 	{		
 		String title = LPobj.validatelogintitle();
-		Assert.assertEquals(title, "CRMPRO - CRM software for customer relationship management, sales, and support.", "Login Page title verified");
-			
+		Assert.assertEquals(title, "CRMPRO - CRM software for customer relationship management, sales, and support.", "Login Page title verified");			
 	}
-	@Test(priority=2)
+	//@Test(priority=2)
 	public void verifylogo()
 	{
 		boolean flag = LPobj.validatelogo();	
 		Assert.assertTrue(true);
 	}
-	@Test(priority=3)
-	public void verifylogintest() throws InterruptedException
-	{
+	//@Test(priority=3)
+	public void verifylogintest()
+	{		
 		HPobj = LPobj.getlogin(prop.getProperty("username"), prop.getProperty("password"));
-		Thread.sleep(120);
+		//Thread.sleep(10000);
 	}
 	
 	@AfterMethod

@@ -7,12 +7,16 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.crmpro.util.Testutil;
 
 public class Testbase {
 	public static WebDriver driver;
 	public static Properties prop;
+	public static WebDriverWait wait;
+	//public static Actions action;
 	
 	//Initilizing/loading config file into java class
 	public Testbase()
@@ -28,7 +32,9 @@ public class Testbase {
 		catch(Exception e)
 		{
 			e.printStackTrace();
-		}		
+		}	
+		
+		//action = new Actions(driver);
 	}
 	
 	//Initilizing 
@@ -57,5 +63,8 @@ public class Testbase {
 		//getting url
 		driver.get(prop.getProperty("url"));
 	}
+
+	
+	
 
 }
